@@ -56,6 +56,16 @@ module fin(h=60, l=30, w=1){
     ];
     union(){
         translate([-w/2,body_outside/2-0.5,0]){polyhedron(FinPoints, FinFaces);}
-        translate([-10.5, body_outside/2 + 10, 0]){cube([20 + w,l,0.2]);}
+        translate([-10.5, body_outside/2 + 10, 0]){
+            // tab with perforations
+            difference(){
+                // tab
+                cube([20 + w,l,0.2]);
+                // perforations
+                for (i=[1:2:body_outside/2+8]){
+                    translate([(20+w)/2-w,i,0]){cube([w*2,1,0.2]);}
+                }
+            }
+        }
     }
 }
