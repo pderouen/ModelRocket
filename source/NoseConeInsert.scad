@@ -2,7 +2,7 @@ include <Settings.scad>;
 
 difference(){
     // insert
-    cylinder(d=engine_w-nose_cone_insert_tolerance,h=nose_cone_insert_length);
+    cylinder(d=body_outside - 2 - nose_cone_insert_tolerance,h=nose_cone_insert_length);
     
     // cut out tie off for parachute
     intersection(){

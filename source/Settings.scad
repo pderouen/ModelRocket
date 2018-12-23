@@ -12,10 +12,13 @@ engine_interior_w = 12;
 chute_section_length = 140;
 
 nose_cone_insert_length = 15;
-nose_cone_insert_tolerance = 0.4;
+nose_cone_insert_tolerance = 0.6;
 
-bolt_width = engine_w;
-body_outside = bolt_width + nut_tolerance + 2;
+body_outside = engine_w + nut_tolerance + 8;
+bolt_width = body_outside - nut_tolerance - 2;
+
+// to get 45 degree tapper for easy printint
+engine_tapper_l = (body_outside - engine_w) / 2;
 
 module nut(height=6){isoThread(d=bolt_width+nut_tolerance, h=height, pitch=2, internal=true, angle = 60);}
 
