@@ -40,7 +40,7 @@ module guide_ring(){
   }
 }
 
-module fin(h=60, l=30, w=1){
+module fin(h=60, l=30, w=0.8){
     FinPoints = [
         [0, 0, 0],    //0
         [w, 0, 0],    //1
